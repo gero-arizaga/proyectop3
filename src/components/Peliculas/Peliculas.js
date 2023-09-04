@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
 import './CharacterCard.css'
 
-class CharacterCard extends Component{
+class Peliculas extends Component{
     constructor(props){
         super(props)
         this.state={
            
         }
     }
+    componentDidMount(){
+        fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1')
+                .then(resopnse => Response.json)
+                .then( data => this.setState(
+                    {datos: data.image_url}
+                ))
+                .catch( error => console.log(error))
+            }
 
     render(){
         // console.log(this.props);
@@ -29,4 +37,4 @@ class CharacterCard extends Component{
 
 }
 
-export default CharacterCard
+export default Peliculas

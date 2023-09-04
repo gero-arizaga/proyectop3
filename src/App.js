@@ -1,26 +1,26 @@
 import React from "react";
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
 
+import Home from "./components/Home/Home";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Favoritos from "./components/Favoritos/Favoritos";
 
 function App() {
+  <React.Fragment>
+  <Header/>
   <Switch>
     <Route path="/" exact={true} component={Home}/>
-    <Route path="/about" component={About}/>
-    <Route path="/rick" component={Rick}/>
-    <Route path="" component={404NotFound}/>
+    <Route path="/favoritos" component={Favoritos}/>
+    <Route path="/todas" component={Todas}/>
+    {/* <Route path="" component={404NotFound}/>  */}
   </Switch>
-  
+  <Footer/>
+  </React.Fragment>
 
   return (
     <React.Fragment>
-      <Navbar />
-      <h1>My App in React</h1>
-      <main>       
-        <p>??</p>
-      </main>
-      <Footer />
+      <Home />
     </React.Fragment>
   );
 }
