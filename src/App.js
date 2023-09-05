@@ -5,6 +5,7 @@ import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Favoritos from "./components/Favoritos/Favoritos";
+import Peliculas from "./components/Peliculas/Peliculas";
 
 function App() {
   <React.Fragment>
@@ -12,7 +13,7 @@ function App() {
   <Switch>
     <Route path="/" exact={true} component={Home}/>
     <Route path="/favoritos" component={Favoritos}/>
-    <Route path="/todas" component={Todas}/>
+    <Route path="/" component={Peliculas}/>
     {/* <Route path="" component={404NotFound}/>  */}
   </Switch>
   <Footer/>
@@ -20,7 +21,9 @@ function App() {
 
   return (
     <React.Fragment>
+      <Header/>
       <Home />
+      <Footer/>
     </React.Fragment>
   );
 }
