@@ -9,14 +9,12 @@ import Peliculas from "./components/Peliculas/Peliculas";
 
 function App() {
   <React.Fragment>
-  <Header/>
-  <Switch>
-    <Route path="/" exact={true} component={Home}/>
-    <Route path="/favoritos" component={Favoritos}/>
-    <Route path="/" component={Peliculas}/>
-    {/* <Route path="" component={404NotFound}/>  */}
-  </Switch>
-  <Footer/>
+    <Switch>
+      <Route path="/" exact={true} component={Home}/>
+      <Route path="/favoritos" component={Favoritos}/>
+      <Route path="/peliculas" component={Peliculas}/>
+      {/* <Route path="" component={404NotFound}/>  */}
+    </Switch>
   </React.Fragment>
 
   return (
