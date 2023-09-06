@@ -1,48 +1,49 @@
 import React, { Component } from "react";
-import Buscador from "../Buscador/Buscador";
-
+import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
+import './Home.css'
 
 class Home extends Component{
     constructor(){
         super()
         this.state = {
-            datos:[],
+            populares: [],
+            cartelera: []
         }
     }
 
 
     componentDidMount(){
-        //PELÍCULAS
-        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=0317bbf7efac7dd04b2c2c3748377d57&language=en-US&page=1' 
-        fetch({url})
+        //PELÍCULAS POPULARES
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=45a63508e52c71549188d480ab5f1a32&language=en-US&page=1')
         .then(response => response.json())
         .then( data => this.setState({
-            datos: data.results,
+            populares: data.results
         }))
         .catch(e => console.log(e))
     
 
-        //
-        // fetch(``)
-        //     .then(response => response.json())
-        //     .then(data => this.setState(
-        //         {datos: data}
-        //     ))
-        //     .catch(error => console.log(error));
+        // PELICULAS EN CARTELERA
+        fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=45a63508e52c71549188d480ab5f1a32&language=en-US&page=1')
+            .then(response => response.json())
+             .then(data => this.setState({
+                cartelera: data.results
+            }))
+             .catch(error => console.log(error));
     }
     render(){
         console.log(this.state);
         return(    
-            <section>              
-              <React.Fragment>
-                <Buscador/>
-                <h1>My App in React</h1>
-              </React.Fragment> 
+            <section className="body-home">              
               <div>
-                    { this.state.datos === []?
+                    {/* { this.state.datos === []?
                     <h3>Cargando...</h3>:
-                    <h3>{this.state.datos}</h3>}
+                    <h3>{this.state.datos}</h3>} */}
                 </div>
+                 { 
+                   this.state.populares.map(function(unaPeli){
+                    return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
+                   })
+                } 
             </section>
         )
     }

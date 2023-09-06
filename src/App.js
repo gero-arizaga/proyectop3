@@ -5,7 +5,7 @@ import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Favoritos from "./components/Favoritos/Favoritos";
-import Peliculas from "./components/Peliculas/Peliculas";
+import TarjetaPelicula from "./components/TarjetaPelicula/TarjetaPelicula";
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
       <Switch>
         <Route path="/" exact={true} component={Home}/>
         <Route path="/favoritos" component={Favoritos}/>
-        <Route path="/peliculas" component={Peliculas}/>
+        <Route path="/tarjetaPelicula" component={TarjetaPelicula}/>
         {/* <Route path="" component={404NotFound}/>  */}
       </Switch>
 
