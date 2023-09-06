@@ -14,7 +14,7 @@ function App() {
     <Route path="/" exact={true} component={Home}/>
     <Route path="/favoritos" component={Favoritos}/>
     <Route path="/" component={Peliculas}/>
-    {/* <Route path="" component={404NotFound}/>  */}
+   {/* <Route path="" component={404NotFound}/>  */}
   </Switch>
   <Footer/>
   </React.Fragment>
