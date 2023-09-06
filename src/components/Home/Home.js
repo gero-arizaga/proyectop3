@@ -1,26 +1,26 @@
 import React, { Component } from "react";
 import Buscador from "../Buscador/Buscador";
-import Peliculas from "../Peliculas/Peliculas";
 
 
 class Home extends Component{
     constructor(){
         super()
         this.state = {
-            datos:''
-        };
+            datos:[],
+        }
     }
 
 
     componentDidMount(){
         //PELÍCULAS
-        let url = `https://api.themoviedb.org/3/movie/popular?api_key=0317bbf7efac7dd04b2c2c3748377d57&language=en-US&page=1` 
+        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=0317bbf7efac7dd04b2c2c3748377d57&language=en-US&page=1' 
         fetch({url})
-            .then(response => response.json())
-            .then(data => this.setState(
-                {datos: data}
-            ))
-            .catch(error => console.log(error));
+        .then(response => response.json())
+        .then( data => this.setState({
+            datos: data.results,
+        }))
+        .catch(e => console.log(e))
+    
 
         //
         // fetch(``)
@@ -31,6 +31,7 @@ class Home extends Component{
         //     .catch(error => console.log(error));
     }
     render(){
+        console.log(this.state);
         return(    
             <section>              
               <React.Fragment>
@@ -38,7 +39,7 @@ class Home extends Component{
                 <h1>My App in React</h1>
               </React.Fragment> 
               <div>
-                    { this.state.datos === ''?
+                    { this.state.datos === []?
                     <h3>Cargando...</h3>:
                     <h3>{this.state.datos}</h3>}
                 </div>

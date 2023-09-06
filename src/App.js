@@ -8,19 +8,18 @@ import Favoritos from "./components/Favoritos/Favoritos";
 import Peliculas from "./components/Peliculas/Peliculas";
 
 function App() {
-  <React.Fragment>
-    <Switch>
-      <Route path="/" exact={true} component={Home}/>
-      <Route path="/favoritos" component={Favoritos}/>
-      <Route path="/peliculas" component={Peliculas}/>
-      {/* <Route path="" component={404NotFound}/>  */}
-    </Switch>
-  </React.Fragment>
 
   return (
     <React.Fragment>
       <Header/>
-      <Home />
+      
+      <Switch>
+        <Route path="/" exact={true} component={Home}/>
+        <Route path="/favoritos" component={Favoritos}/>
+        <Route path="/peliculas" component={Peliculas}/>
+        {/* <Route path="" component={404NotFound}/>  */}
+      </Switch>
+
       <Footer/>
     </React.Fragment>
   );
