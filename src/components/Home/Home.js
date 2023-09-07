@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
+import VerTodas from "../VerTodas/VerTodas";
 import './Home.css'
 
 class Home extends Component{
@@ -30,21 +32,29 @@ class Home extends Component{
             }))
              .catch(error => console.log(error));
     }
+    verTodas(){
+
+    }
     render(){
         console.log(this.state);
         return(    
-            <section>              
-              <div className="body-home">
-                    {/* { this.state.datos === []?
-                    <h3>Cargando...</h3>:
-                    <h3>{this.state.datos}</h3>} */}
-                
-                 { 
+            <section>
+                <h2>Peliculas Populares  
+                     <Link to='/verTodas'>
+                     <button>
+                        Ver Todas
+                    </button>
+                    </Link>
+                </h2>  
+                            
+                <div className="body-home">               
+                { 
                    this.state.populares.slice(0,5).map(function(unaPeli){
                     return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
                    })
                 } 
                 </div>
+                <h2>Peliculas en Cartelera <button><Link to='/verTodas'>Ver Todas</Link></button></h2>
                 <div className="body-home">
                 { 
                    this.state.cartelera.slice(0,5).map(function(unaPeli){
