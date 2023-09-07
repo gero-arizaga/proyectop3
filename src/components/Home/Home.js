@@ -33,17 +33,25 @@ class Home extends Component{
     render(){
         console.log(this.state);
         return(    
-            <section className="body-home">              
-              <div>
+            <section>              
+              <div className="body-home">
                     {/* { this.state.datos === []?
                     <h3>Cargando...</h3>:
                     <h3>{this.state.datos}</h3>} */}
-                </div>
+                
                  { 
                    this.state.populares.map(function(unaPeli){
                     return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
                    })
                 } 
+                </div>
+                <div className="body-home">
+                { 
+                   this.state.cartelera.map(function(unaPeli){
+                    return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
+                   })
+                } 
+                </div>
             </section>
         )
     }
