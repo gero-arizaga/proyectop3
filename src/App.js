@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Favoritos from "./components/Favoritos/Favoritos";
 import TarjetaPelicula from "./components/TarjetaPelicula/TarjetaPelicula";
+import DetailPelicula from "./components/DetailPelicula/DetailPelicula"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" exact={true} component={Home}/>
         <Route path="/favoritos" component={Favoritos}/>
         <Route path="/tarjetaPelicula" component={TarjetaPelicula}/>
+        <Route path="/detallePelicula/:id" component={DetailPelicula}/>
         {/* <Route path="" component={404NotFound}/>  */}
       </Switch>
 

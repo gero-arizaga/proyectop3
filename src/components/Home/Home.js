@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
 import './Home.css'
 
@@ -41,7 +42,7 @@ class Home extends Component{
                 
                  { 
                    this.state.populares.map(function(unaPeli){
-                    return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
+                    return <Link to="/detallePelicula/:id"><TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/></Link>
                    })
                 } 
                 </div>

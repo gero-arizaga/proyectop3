@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import detallePelicula from "../detallePelicula.js"
+import DetallePelicula from "../../screens/DetallePelicula/DetallePelicula"
 
-function Detailpelicula(props) {
+function DetailPelicula(props) {
     return(
         <React.Fragment>
             <section className="seccion_detallepeli1">
-                <h1>{titulo}</h1>
+                <h1>{props.titulo}</h1>
                 <article className="articulo">
-                    <img className="imagenpeli" src={portada} alt={titulo}/>
+                    <img className="imagenpeli" src={props.portada} alt={props.titulo}/>
                 </article>
             </section>
             <section className="seccion_detallepeli2">
                 <article>
-                    <p className="texto">Fecha de estreno:{fecha_de_estreno}</p>
-                    <p className="texto">Rating: {rating}</p>
-                    <p className="texto">Sinopsis: {sinopsis}</p>
+                    <p className="texto">Fecha de estreno:{release_date}</p>
+                    <p className="texto">Rating: {vote_average}</p>
+                    <p className="texto">Sinopsis: {overview}</p>
                     <p className="texto">Duracion:{}</p>
                     {/* <p className="texto">Gender:{}</p> */}
                 </article>
@@ -22,3 +22,4 @@ function Detailpelicula(props) {
         </React.Fragment>
     )
 }
+export default DetailPelicula;

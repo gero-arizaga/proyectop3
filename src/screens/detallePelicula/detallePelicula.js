@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import DetailPelicula from "../DetailPelicula.js";
+import DetailPelicula from "../../components/DetailPelicula/DetailPelicula";
 
 
-class DetallePleicula extends Component {
+class DetallePelicula extends Component {
     constructor(props){
         super(props);
         this.state = {
-            pelicula: false,
+            peliculas: false,
         }
     };
 
@@ -34,3 +34,4 @@ class DetallePleicula extends Component {
             </div>)
         }
     }
+export default DetallePelicula;
