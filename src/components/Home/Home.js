@@ -41,14 +41,15 @@ class Home extends Component{
                     <h3>{this.state.datos}</h3>} */}
                 
                  { 
-                   this.state.populares.map(function(unaPeli){
-                    return <Link to="/detallePelicula/:id"><TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/></Link>
+                   this.state.populares.slice(0,5).map(function(unaPeli){
+                    return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
                    })
                 } 
+                {/* <Link to={`/detallePelicula/${this.state.populares.id}`}></Link> Link a detalle*/}
                 </div>
                 <div className="body-home">
                 { 
-                   this.state.cartelera.map(function(unaPeli){
+                   this.state.cartelera.slice(0,5).map(function(unaPeli){
                     return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
                    })
                 } 
