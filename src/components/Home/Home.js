@@ -40,7 +40,9 @@ class Home extends Component{
         return(    
             <section>
                 <h2>Peliculas Populares  
-                     <Link to='/verTodas'>
+                    <Link to={
+                        `/verTodas`
+                        }>
                      <button>
                         Ver Todas
                     </button>

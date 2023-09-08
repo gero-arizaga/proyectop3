@@ -17,26 +17,28 @@ class DetallePelicula extends Component {
         fetch(url)
         .then(response => response.json())
         .then( data => this.setState({
-            pelicula: data.results,
+            pelicula: data,
         }))
         .catch(e => console.log(e))
     }
 
     render() {
         return(
+            console.log("llegue1"),
             console.log(this.state.pelicula),
             console.log(this.state.idPeli),
-
+            <div>
             <DetailPelicula peliculaTraida={this.state.pelicula}/>
             
-        //    <div>
-        //         {
-        //             <DetailPelicula titulo={this.state.peliculas.title} portada={this.state.peliculas.poster_path}/>
-        //             :
-        //             <h3>Cargando...</h3>
+            {/* <div>
+                 {
+                     <DetailPelicula titulo={this.state.peliculas.title} portada={this.state.peliculas.poster_path}/>
+                     :
+                     <h3>Cargando...</h3>
                     
-        //         }
-        //     </div>
+                 }
+            </div> */}
+            </div>
       )  }
     }
 export default DetallePelicula;
