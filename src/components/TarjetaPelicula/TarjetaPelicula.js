@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import './TarjetaPelicula.css'
+import './TarjetaPelicula.css';
+import {Link} from 'react-router-dom';
 
 class TarjetaPelicula extends Component{
     constructor(props){
@@ -47,6 +48,11 @@ class TarjetaPelicula extends Component{
                 <button onClick={()=>this.agergarYSacarDeFavs(this.props.datosPeli.id)} type='button'>{this.state.textoBoton}</button> 
                 <h2>{this.props.datosPeli.title}</h2> 
                 <p >{this.props.datosPeli.overview}</p> 
+                <Link to={`/detallePelicula/${this.props.datosPeli.id}`}>
+                    <button>
+                        Ver detalle
+                    </button>
+                </Link>
             </article>
         )
     }

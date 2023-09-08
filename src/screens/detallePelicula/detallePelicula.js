@@ -12,9 +12,9 @@ class DetallePelicula extends Component {
     };
 
     componentDidMount() {
-        //PELÍCULAS
+        
         let url = `https://api.themoviedb.org/3/movie/${this.state.idPeli}?api_key=0317bbf7efac7dd04b2c2c3748377d57&language=en-US&page=1` 
-        fetch({url})
+        fetch(url)
         .then(response => response.json())
         .then( data => this.setState({
             pelicula: data.results,
@@ -24,8 +24,10 @@ class DetallePelicula extends Component {
 
     render() {
         return(
-            console.log(this.props.match.params.id),
-            console.log(this.state.idPeli)
+            console.log(this.state.pelicula),
+            console.log(this.state.idPeli),
+
+            <DetailPelicula peliculaTraida={this.state.pelicula}/>
             
         //    <div>
         //         {
