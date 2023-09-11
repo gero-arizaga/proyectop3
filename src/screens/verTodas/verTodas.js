@@ -19,6 +19,13 @@ class VerTodas extends Component{
         }))
         .catch(e => console.log(e))
     }
+    render(){
+        return(
+            <article>
+                
+            </article>
+        )
+    }
 
 }
 

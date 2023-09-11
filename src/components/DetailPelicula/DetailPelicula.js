@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DetallePelicula from "../../screens/detallePelicula/detallePelicula"
+import DetallePelicula from "../../screens/DetallePelicula/detallePelicula"
 
 class DetailPelicula extends Component {
    constructor(props){
@@ -11,7 +11,7 @@ class DetailPelicula extends Component {
    render(){
     return(
         console.log("llegue2"),
-        console.log(this.state.peliTraida),
+        console.log(this.state),
         <React.Fragment>
             <section className="seccion_detallepeli1">
                 <h1>{this.state.peliTraida.peliculaTraida.title}</h1>

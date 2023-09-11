@@ -6,7 +6,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Favoritos from "./components/Favoritos/Favoritos";
 import TarjetaPelicula from "./components/TarjetaPelicula/TarjetaPelicula";
-import DetallePelicula from "./screens/detallePelicula/detallePelicula"
+import DetallePelicula from "./screens/DetallePelicula/detallePelicula";
 import VerTodas from "./screens/verTodas/verTodas";
 import NotFound from "./components/NotFound/NotFound";
 
