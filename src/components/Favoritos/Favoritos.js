@@ -1,9 +1,0 @@
-import React, { Component } from "react";
-function Favoritos(){
-    return(
-        <div>
-        </div>
-    )
-}
-
-export default Favoritos;

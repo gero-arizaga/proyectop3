@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
-import DetallePelicula from "../../screens/detallePelicula/detallePelicula"
+import DetallePelicula from "../../screens/DetallePelicula/DetallePelicula"
 
 class DetailPelicula extends Component {
    constructor(props){
         super(props)
         this.state = {
             peliTraida: this.props,
+            textoBoton: "Agregar a favoritos",
         } 
    }
+   agergarYSacarDeFavs(id){
+    let favoritos = [];
+    favoritos.push(id);
+
+    let favoritosToString = JSON.stringify(favoritos);        
+    localStorage.setItem('favoritos', favoritosToString);
+
+    this.setState({
+        textoBoton: "Quitar de favoritos",
+    })
+
+}
    render(){
     return(
         console.log("llegue2"),
-        console.log(this.state),
+        console.log("props", this.props),
         <React.Fragment>
             <section className="seccion_detallepeli1">
                 <h1>{this.state.peliTraida.peliculaTraida.title}</h1>
@@ -25,7 +38,12 @@ class DetailPelicula extends Component {
                     <p className="texto">Rating: {this.state.peliTraida.peliculaTraida.vote_average}</p>
                     <p className="texto">Sinopsis: {this.state.peliTraida.peliculaTraida.overview}</p>
                     <p className="texto">Duracion:{this.state.peliTraida.peliculaTraida.runtime}mins</p>
-                    {/* <p className="texto">Gender:{}</p> */}
+                    <p className="texto">Genres:{this.state.peliTraida.peliculaTraida.genres.map(function(generos){
+                        return(
+                            <li>{generos.name}</li>
+                        )}) }
+                    </p> 
+                    <button onClick={()=>this.agergarYSacarDeFavs(this.props.state.peliTraida.peliculaTraida.id)} type='button'>{this.state.textoBoton}</button>
                 </article>
             </section>
         </React.Fragment>

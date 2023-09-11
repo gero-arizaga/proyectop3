@@ -24,11 +24,15 @@ class DetallePelicula extends Component {
 
     render() {
         return(
-            console.log("llegue1"),
-            console.log(this.state.pelicula),
-            console.log(this.state.idPeli),
             <div>
-            <DetailPelicula peliculaTraida={this.state.pelicula}/>
+                {
+                    this.state.pelicula ? (
+                        <DetailPelicula peliculaTraida={this.state.pelicula}/>
+                    ): (
+                        <p>Cargando</p>
+                    )
+                }
+            
             
             {/* <div>
                  {

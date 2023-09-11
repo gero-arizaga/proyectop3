@@ -9,8 +9,10 @@ class Home extends Component{
         super()
         this.state = {
             populares: [],
-            cartelera: []
+            cartelera: [],
+            todas: []
         }
+        
     }
 
 
@@ -20,6 +22,7 @@ class Home extends Component{
         .then(response => response.json())
         .then( data => this.setState({
             populares: data.results
+           
         }))
         .catch(e => console.log(e))
     
@@ -32,20 +35,14 @@ class Home extends Component{
             }))
              .catch(error => console.log(error));
     }
-    verTodas(){
-
-    }
+    
     render(){
         console.log(this.state);
         return(    
             <section>
                 <h2>Peliculas Populares  
-                    <Link to={
-                        `/verTodas`
-                        }>
-                     <button>
-                        Ver Todas
-                    </button>
+                    <Link to={'populares'}>
+                        <button>Ver Todas</button>
                     </Link>
                 </h2>  
                             
@@ -55,9 +52,12 @@ class Home extends Component{
                     return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
                    })
                 } 
-                {/* <Link to={`/detallePelicula/${this.state.populares.id}`}></Link> Link a detalle*/}
                 </div>
-                <h2>Peliculas en Cartelera <button><Link to='/verTodas'>Ver Todas</Link></button></h2>
+                <h2>Peliculas en Cartelera 
+                    <button>
+                        <Link to='/cartelera'>Ver Todas</Link>
+                    </button>
+                </h2>
                 <div className="body-home">
                 { 
                    this.state.cartelera.slice(0,5).map(function(unaPeli){
