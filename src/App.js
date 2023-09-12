@@ -4,11 +4,13 @@ import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Favoritos from "./components/Favoritos/Favoritos";
+import Favoritos from "./screens/Favoritos/Favoritos";
 import TarjetaPelicula from "./components/TarjetaPelicula/TarjetaPelicula";
-import DetallePelicula from "./screens/DetallePelicula/detallePelicula";
-import VerTodas from "./screens/verTodas/verTodas";
+import DetallePelicula from "./screens/DetallePelicula/DetallePelicula"
+import Populares from "./screens/Populares/Populares";
+import Cartelera from "./screens/Cartelera/Cartelera";
 import NotFound from "./components/NotFound/NotFound";
+import Resultados from "./screens/Resultados/Resultados";
 
 function App() {
 
@@ -20,7 +22,9 @@ function App() {
         <Route path="/favoritos" component={Favoritos}/>
         <Route path="/tarjetaPelicula" component={TarjetaPelicula}/>
         <Route path="/detallePelicula/:id" component={DetallePelicula}/>
-        <Route path='/verTodas/:id' component={VerTodas}/>
+        <Route path='/populares' component={Populares}/>
+        <Route path='/cartelera' component={Cartelera}/>
+        <Route path='/resultados/:query' component={Resultados}/>
         <Route component={NotFound}/>  
       </Switch>
 

@@ -7,6 +7,7 @@ ul,ol {
 }
 li {
     list-style-type:none;
+    color: white;
 }
 a {
     text-decoration: none;
@@ -15,7 +16,7 @@ a {
 body {
     font-family: Nunito;
     margin: 0;
-    background-color: #eee;
+    background-color: rgb(249, 247, 247);
     padding-bottom: 150px;
 }
 
@@ -26,7 +27,7 @@ nav{
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 20px;
-    background-color: #4edf8b;
+    background-color: #df4e4e;
     color: #fff
 }
 
@@ -110,7 +111,9 @@ main {
     padding: 0 20px;
     color: #fff;
 }
-
+.character-card{
+    background-color: #000;
+}
 /* Characters Container */
 .card-container {
     margin-top: 20px;
