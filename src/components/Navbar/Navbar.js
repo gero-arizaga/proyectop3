@@ -8,7 +8,8 @@ function Navbar(){
             <ul className="main-nav">
                 <li><Link to="/"> Home </Link></li>
                 <li><Link to="/favoritos"> Favoritos </Link></li>
-                <li><Link to="/todas"> Todas </Link></li>
+                <li><Link to='/populares'>Populares</Link></li>
+                <li><Link to='/cartelera'>Cartelera</Link></li>
             </ul>
             <ul><Buscador/></ul>
             <ul className="user">

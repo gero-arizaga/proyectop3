@@ -25,23 +25,10 @@ class DetallePelicula extends Component {
     render() {
         return(
             <div>
-                {
-                    this.state.pelicula ? (
-                        <DetailPelicula peliculaTraida={this.state.pelicula}/>
-                    ): (
-                        <p>Cargando</p>
+                {this.state.pelicula ? (<DetailPelicula peliculaTraida={this.state.pelicula}/>): (
+                    <p>Cargando</p>
                     )
                 }
-            
-            
-            {/* <div>
-                 {
-                     <DetailPelicula titulo={this.state.peliculas.title} portada={this.state.peliculas.poster_path}/>
-                     :
-                     <h3>Cargando...</h3>
-                    
-                 }
-            </div> */}
             </div>
       )  }
     }

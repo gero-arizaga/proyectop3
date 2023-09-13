@@ -6,9 +6,14 @@ class TarjetaPelicula extends Component{
     constructor(props){
         super(props)
         this.state = {
-            textoBoton: "Agregar a favoritos",
+            view: false, 
+            textoBoton: "Agregar a favoritos"
         }
     }
+    visibilidad = () => {
+        this.setState({ view: !this.state.view });
+     };
+ 
 
     componentDidMount(){
         let recuperoStorage = localStorage.getItem('favoritos');
@@ -26,25 +31,42 @@ class TarjetaPelicula extends Component{
     }
     agergarYSacarDeFavs(id){
         let favoritos = [];
-        favoritos.push(id);
+        let recuperoStorage = localStorage.getItem ("favoritos");
 
-        let favoritosToString = JSON.stringify(favoritos);        
-        localStorage.setItem('favoritos', favoritosToString);
+        if (recuperoStorage !== null) {  
+            favoritos = JSON.parse(recuperoStorage);
+        }
 
-        this.setState({
-            textoBoton: "Quitar de favoritos",
-        })
+        if (favoritos.includes (id)){ 
+            favoritos = favoritos.filter (unId => unId !== id )
+            this.setState ({
+                textoBoton: "Agregar a favoritos"
+            })
 
+         } else {
+            favoritos.push (id);
+            this.setState ({
+                textoBoton: "Quitar de favoritos",
+            })
+         }
+        let favoritostoString= JSON.stringify(favoritos);
+        localStorage.setItem ("favoritos", favoritostoString);
     }
+
 
     render(){
         return (
             <article className='character-card'>
                 <Link to={`/detallePelicula/${this.props.datosPeli.id}`}>
                     { <img src={"https://image.tmdb.org/t/p/w300/" + this.props.datosPeli.poster_path} alt={this.props.datosPeli.original_title} /> } 
-                    <h2>{this.props.datosPeli.title}</h2> 
-                    <p >{this.props.datosPeli.overview}</p> 
+                    <h2>{this.props.datosPeli.title}</h2>
                 </Link>
+
+                <button onClick={this.visibilidad} type="button" >Ver más</button>
+                    {this.state.view && (
+                    <p>{this.props.datosPeli.overview}</p>
+                    )} 
+
                 <button onClick={()=>this.agergarYSacarDeFavs(this.props.datosPeli.id)} type='button'>{this.state.textoBoton}</button> 
             </article>
         )

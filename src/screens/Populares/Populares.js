@@ -22,17 +22,20 @@ class Populares extends Component{
 
 
 render(){
+    
     return(
         <section >
        <h2>Populares</h2> 
        <div className="body-home">
         { 
-            this.state.populares.map(function(unaPeli){
+            this.state.populares ?
+            (this.state.populares.map(function(unaPeli){
              return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
-            })
+            }))
+            : (<h2>Cargando...</h2>)
          }
          </div>
-         </section>
+         </section> 
     )
 }
 }
