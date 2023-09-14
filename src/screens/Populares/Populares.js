@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TarjetaPelicula from "../../components/TarjetaPelicula/TarjetaPelicula";
+import './Populares.css'
 
 class Populares extends Component{
     constructor(props){
@@ -25,13 +26,14 @@ render(){
     
     return(
         <section >
-       <h2>Populares</h2> 
-       <div className="body-home">
+       <h3>POPULARES</h3> 
+       <div className="pelisPop">
         { 
             this.state.populares ?
             (this.state.populares.map(function(unaPeli){
              return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
             }))
+            
             : (<h2>Cargando...</h2>)
          }
          </div>

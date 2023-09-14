@@ -1,7 +1,7 @@
 .seccion_detallepeli{
+    color: beige;
     display: flex;
-    flex-direction:column;
-    flex-wrap: wrap;
+    flex-direction:row;
     justify-content: flex-start;
     align-items: flex-start;
     text-align: center;
@@ -12,23 +12,26 @@
     object-fit: cover;
     border-radius: 20px;
 }
-.items{
+.items1{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+}
+.items3{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items:stretch;
+    justify-content: space-around;
     align-self: center;
     background-color: rgba(170, 170, 170, 0.393);
-    padding: 100px;
+    padding:40px;
     margin: 0px;
     border-radius: 100px;
 }
-.texto{
-    
-}
 
 .botonfav{
-    background:  rgba(28, 127, 51, 0.288);
+    background:  rgba(197, 65, 29, 0.288);
     border: none;
     border-radius: 15px;
     padding: 15px 30px;
@@ -36,10 +39,11 @@
     margin-right: 20px;
     cursor: pointer;
     font-size: 18px;
-
 }
 
 .botonfav:hover{
-    background-color:blue;
+    background-color:rgb(173, 121, 0);
 }
-
+.generos{
+    color: beige;
+}

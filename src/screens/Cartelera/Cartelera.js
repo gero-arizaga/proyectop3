@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TarjetaPelicula from "../../components/TarjetaPelicula/TarjetaPelicula";
+import './Cartelera.css'
 
 class Cartelera extends Component{
     constructor(props){
@@ -24,8 +25,8 @@ class Cartelera extends Component{
 render(){
     return(
         <section >
-       <h2>Cartelera</h2> 
-       <div className="body-home">
+       <h2>CARTELERA</h2> 
+       <div className="pelisCartelera">
         { 
             this.state.cartelera.map(function(unaPeli){
              return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>

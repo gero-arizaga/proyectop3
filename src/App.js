@@ -27,9 +27,9 @@ function App() {
         <Route path='/resultados/:query' component={Resultados}/>
         <Route component={NotFound}/>  
       </Switch>
-
       <Footer/>
     </React.Fragment>
+    
   );
 }
 

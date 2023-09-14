@@ -1,0 +1,9 @@
+.pelisPop{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-self: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 0px;
+}

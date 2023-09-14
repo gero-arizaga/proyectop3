@@ -6,14 +6,14 @@ function Navbar(){
     return (
         <nav>
             <ul className="main-nav">
-                <li><Link to="/"> Home </Link></li>
-                <li><Link to="/favoritos"> Favoritos </Link></li>
-                <li><Link to='/populares'>Populares</Link></li>
-                <li><Link to='/cartelera'>Cartelera</Link></li>
+                <li><Link className='enlaces' to="/"> HOME </Link></li>
+                <li><Link className='enlaces' to="/favoritos"> FAVORITOS </Link></li>
+                <li><Link className='enlaces' to='/populares'>POPULARES</Link></li>
+                <li><Link className='enlaces' to='/cartelera'>CARTELERA</Link></li>
             </ul>
             <ul><Buscador/></ul>
             <ul className="user">
-                <li>Nombre usuario <img src="/img/user.jpg" alt=""/></li>
+                <li> <Link to='/'><img src="/img/MAGOBA.png" alt=""/></Link></li>
             </ul>
         </nav>
     )

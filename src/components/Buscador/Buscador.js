@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import './Buscador.css'
 
 class Buscador extends Component{
     constructor(props){
@@ -20,7 +21,7 @@ class Buscador extends Component{
     render(){
         console.log(this.state.peliculas);
         return(
-        <form onSubmit={(event)=>this.evitarSubmit(event)}>
+        <form className="buscadorNav" onSubmit={(event)=>this.evitarSubmit(event)}>
             <input type="text" placeholder="Buscar" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor}/>
             <Link to={`/resultados/${this.state.valor}`}><button type="submit" value="Submit">Buscar</button></Link>
             

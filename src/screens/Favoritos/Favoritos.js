@@ -33,13 +33,15 @@ class Favoritos extends Component{
         }
     render(){
         return(
-            <div>
+            <section>
                 <h2>Favoritos</h2>
-                {this.state.favoritos.map(
+                <div className="pelisPop">
+                    {this.state.favoritos.map(
                     (pelisFavoritos, idx) => <TarjetaPelicula key={ pelisFavoritos + idx } datosPeli={ pelisFavoritos }/>
 
-                )}
-            </div>
+                    )}
+                </div>
+            </section>
         )
     }
 }

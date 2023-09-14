@@ -43,26 +43,27 @@ class DetailPelicula extends Component {
         console.log("llegue2"),
         console.log("props", this.props),
         <React.Fragment>
-            <div className="seccion_detallepeli">
-                <section><h1>{this.state.peliTraida.peliculaTraida.title}</h1>
-                
-                      <img className="imagenpeli" src={"https://image.tmdb.org/t/p/w300/" + this.state.peliTraida.peliculaTraida.poster_path} alt={this.state.peliTraida.title}/>  
-                </section>
-                <section className="items">
+            <h1>{this.state.peliTraida.peliculaTraida.title}</h1>
+            <section className="seccion_detallepeli">
+                <img className="imagenpeli" src={"https://image.tmdb.org/t/p/w300/" + this.state.peliTraida.peliculaTraida.poster_path} alt={this.state.peliTraida.title}/>  
+                <div className='items3'>
+                <section className="items1">
                     <p className="texto">Fecha de estreno:{this.state.peliTraida.peliculaTraida.release_date}</p>
                     <p className="texto">Rating: {this.state.peliTraida.peliculaTraida.vote_average}</p>
-                    <p className="texto">Sinopsis: {this.state.peliTraida.peliculaTraida.overview}</p>
+                </section>
+                <p className="texto">Sinopsis: {this.state.peliTraida.peliculaTraida.overview}</p>
+                <div className="items1">
                     <p className="texto">Duracion:{this.state.peliTraida.peliculaTraida.runtime}mins</p>
-                    <p className="texto">Genres:{this.state.peliTraida.peliculaTraida.genres.map(function(generos){
+                    <p className="texto">Generos:{this.state.peliTraida.peliculaTraida.genres.map(function(generos){
                         return(
-                            <p>{generos.name}</p>
+                            <li className='generos'>{generos.name}</li>
                         )}) }
                     </p> 
                     <button className="botonfav" onClick={()=>this.agergarYSacarDeFavs(this.state.peliTraida.peliculaTraida.id)} type='button'>{this.state.textoBoton}</button>
-                </section>
-                    
+                </div>
+                    </div>
                 
-            </div>
+            </section>
         </React.Fragment>
     )
 }}

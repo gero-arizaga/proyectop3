@@ -1,0 +1,9 @@
+.pelisCartelera{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-self: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 0px;
+}

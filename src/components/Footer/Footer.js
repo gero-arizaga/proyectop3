@@ -4,7 +4,7 @@ import './Footer.css'
 function Footer(){
     return(
         <footer>
-            <p>Martin Biolcati, Geronimo Arizaga y Tomas Chaiman</p>
+            <p>Martin Biolcati | Geronimo Arizaga | Tomas Chaiman</p>
         </footer>
     )
 }

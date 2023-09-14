@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
 import VerTodas from "../VerTodas/VerTodas";
 import './Home.css'
+import Footer from "../Footer/Footer";
 
 class Home extends Component{
     constructor(){
@@ -41,7 +42,7 @@ class Home extends Component{
         return(    
             <section>
                 <Link to={'populares'}>
-                    <h2>Peliculas Populares </h2> 
+                    <h3>PELICULAS POPULARES </h3> 
                 </Link>         
                 <div className="body-home">               
                 { 
@@ -51,7 +52,7 @@ class Home extends Component{
                 } 
                 </div>
                 <Link to='/cartelera'>
-                    <h2>Peliculas en Cartelera</h2>
+                    <h3>PELICULAS EN CARTELERA</h3>
                 </Link>
                 <div className="body-home">
                 { 
@@ -60,7 +61,7 @@ class Home extends Component{
                    })
                 } 
                 </div>
-            </section>
+            </section>   
         )
     }
 }

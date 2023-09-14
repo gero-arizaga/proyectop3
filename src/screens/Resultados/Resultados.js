@@ -20,20 +20,21 @@ class Resultados extends Component {
     }
 
     render() {
-        console.log(this.props.match.params.query);
         return (
-            <div className="body-home">
-                {this.state.peliculas.length > 0 ? (
-                    this.state.peliculas.slice(0,10).map((pelicula)=> {
-                        return(
-                            <TarjetaPelicula key={ pelicula.id } datosPeli={ pelicula }/>
-                        )
-                    })
-                ):(
-                    <p>Cargando</p>
-                )}
-
-            </div>
+            <section>
+                <h2>Resultados de busqueda</h2>
+                <div className="pelisPop">
+                    {this.state.peliculas.length > 0 ? (
+                        this.state.peliculas.slice(0,24).map((pelicula)=> {
+                            return(
+                                <TarjetaPelicula key={ pelicula.id } datosPeli={ pelicula }/>
+                            )
+                        })
+                    ):(
+                        <p>Cargando</p>
+                    )}
+                </div>
+            </section>
         )
     }
 }
