@@ -16,9 +16,13 @@ a {
 body {
     font-family: Nunito;
     margin: 0;
-    background-color: rgb(249, 247, 247);
     padding-bottom: 150px;
+    background: -webkit-linear-gradient(to bottom right, #ff0000 25%, #0099ff 75%);  
+    background: linear-gradient(to bottom right, #ff0000 25%, #0099ff 75%);
+    font-family: 'Open Sans', sans-serif;
+
 }
+
 
 /* Navigation */
 nav{

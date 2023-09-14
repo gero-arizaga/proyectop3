@@ -1,4 +1,4 @@
-.seccion_detallepeli1{
+.seccion_detallepeli{
     display: flex;
     flex-direction:column;
     flex-wrap: wrap;
@@ -8,3 +8,38 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 10px;
 }
+.imagenpeli{
+    object-fit: cover;
+    border-radius: 20px;
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    background-color: rgba(170, 170, 170, 0.393);
+    padding: 100px;
+    margin: 0px;
+    border-radius: 100px;
+}
+.texto{
+    
+}
+
+.botonfav{
+    background:  rgba(28, 127, 51, 0.288);
+    border: none;
+    border-radius: 15px;
+    padding: 15px 30px;
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+.botonfav:hover{
+    background-color:blue;
+}
+

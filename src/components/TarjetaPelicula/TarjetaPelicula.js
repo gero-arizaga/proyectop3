@@ -7,7 +7,7 @@ class TarjetaPelicula extends Component{
         super(props)
         this.state = {
             view: false, 
-            textoBoton: "Agregar a favoritos"
+            textoBoton: " ❤ Agregar a Favoritos"
         }
     }
     visibilidad = () => {
@@ -40,7 +40,7 @@ class TarjetaPelicula extends Component{
         if (favoritos.includes (id)){ 
             favoritos = favoritos.filter (unId => unId !== id )
             this.setState ({
-                textoBoton: "Agregar a favoritos"
+                textoBoton: " ❤ Agregar a Favoritos"
             })
 
          } else {
