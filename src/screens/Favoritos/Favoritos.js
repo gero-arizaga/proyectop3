@@ -34,6 +34,7 @@ class Favoritos extends Component{
     render(){
         return(
             <div>
+                <h2>Favoritos</h2>
                 {this.state.favoritos.map(
                     (pelisFavoritos, idx) => <TarjetaPelicula key={ pelisFavoritos + idx } datosPeli={ pelisFavoritos }/>
 

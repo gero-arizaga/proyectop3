@@ -40,12 +40,9 @@ class Home extends Component{
         console.log(this.state);
         return(    
             <section>
-                <h2>Peliculas Populares  
-                    <Link to={'populares'}>
-                        <button>Ver Todas</button>
-                    </Link>
-                </h2>  
-                            
+                <Link to={'populares'}>
+                    <h2>Peliculas Populares </h2> 
+                </Link>         
                 <div className="body-home">               
                 { 
                    this.state.populares.slice(0,5).map(function(unaPeli){
@@ -53,11 +50,9 @@ class Home extends Component{
                    })
                 } 
                 </div>
-                <h2>Peliculas en Cartelera 
-                    <button>
-                        <Link to='/cartelera'>Ver Todas</Link>
-                    </button>
-                </h2>
+                <Link to='/cartelera'>
+                    <h2>Peliculas en Cartelera</h2>
+                </Link>
                 <div className="body-home">
                 { 
                    this.state.cartelera.slice(0,5).map(function(unaPeli){
