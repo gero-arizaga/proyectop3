@@ -1,4 +1,4 @@
-.character-card{
+.pelicula-card{
     color: beige;
     font-size: 20px;
     padding: 10px;
@@ -10,21 +10,21 @@
     transition: all 300ms;
     
 }
-.character-card img{
+.pelicula-card img{
     width: 100%;
     margin-bottom: 20px; 
 }
-.character-card:hover,
+.pelicula-card:hover,
 .active{
 box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
-.character-card:hover{
+.pelicula-card:hover{
     transform: scale(1.05);
 }
-.character-card p {
+.pelicula-card p {
     margin: 3px 0;
 }
-.character-card h2 {
+.pelicula-card h2 {
     margin: 2px 0;
 }
 .more{
@@ -45,4 +45,16 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 .hide{
     display: none;
+}
+.botonFav{
+    background:  rgba(197, 65, 29, 0.288);
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 7px;
+}
+.botonFav:hover{
+    background-color:rgb(173, 121, 0);
 }

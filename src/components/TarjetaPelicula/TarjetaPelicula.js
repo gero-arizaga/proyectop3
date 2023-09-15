@@ -23,10 +23,8 @@ class TarjetaPelicula extends Component{
     
             if(favoritos.includes(this.props.datosPeli.id)){
                 this.setState({
-                    textoBoton: "Quitar de favoritos"
-                })
+                    textoBoton: "Quitar de favoritos"})
             }
-
         }
     }
     agergarYSacarDeFavs(id){
@@ -43,12 +41,12 @@ class TarjetaPelicula extends Component{
                 textoBoton: " ❤ Agregar a Favoritos"
             })
 
-         } else {
+        } else {
             favoritos.push (id);
             this.setState ({
                 textoBoton: "Quitar de favoritos",
             })
-         }
+        }
         let favoritostoString= JSON.stringify(favoritos);
         localStorage.setItem ("favoritos", favoritostoString);
     }
@@ -56,18 +54,18 @@ class TarjetaPelicula extends Component{
 
     render(){
         return (
-            <article className='character-card'>
+            <article className='pelicula-card'>
                 <Link to={`/detallePelicula/${this.props.datosPeli.id}`}>
-                    { <img src={"https://image.tmdb.org/t/p/w300/" + this.props.datosPeli.poster_path} alt={this.props.datosPeli.original_title} /> } 
+                    {<img src={"https://image.tmdb.org/t/p/w300/" + this.props.datosPeli.poster_path} alt={this.props.datosPeli.original_title}/>} 
                     <h2>{this.props.datosPeli.title}</h2>
                 </Link>
 
-                <button onClick={this.visibilidad} type="button" >Ver más</button>
+                <button className="botonFav" onClick={this.visibilidad} type="button" >Ver más</button>
                     {this.state.view && (
                     <p>{this.props.datosPeli.overview}</p>
                     )} 
 
-                <button onClick={()=>this.agergarYSacarDeFavs(this.props.datosPeli.id)} type='button'>{this.state.textoBoton}</button> 
+                <button className="botonFav" onClick={()=>this.agergarYSacarDeFavs(this.props.datosPeli.id)} type='button'>{this.state.textoBoton}</button> 
             </article>
         )
     }

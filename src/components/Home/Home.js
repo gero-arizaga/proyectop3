@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import {Link} from 'react-router-dom';
 import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
-import VerTodas from "../VerTodas/VerTodas";
 import './Home.css'
-import Footer from "../Footer/Footer";
 
 class Home extends Component{
     constructor(){
@@ -12,22 +10,17 @@ class Home extends Component{
             populares: [],
             cartelera: [],
             todas: []
-        }
-        
+        }  
     }
-
-
     componentDidMount(){
         //PELÍCULAS POPULARES
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=45a63508e52c71549188d480ab5f1a32&language=en-US&page=1')
         .then(response => response.json())
         .then( data => this.setState({
             populares: data.results
-           
         }))
         .catch(e => console.log(e))
     
-
         // PELICULAS EN CARTELERA
         fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=45a63508e52c71549188d480ab5f1a32&language=en-US&page=1')
             .then(response => response.json())
@@ -41,25 +34,22 @@ class Home extends Component{
         console.log(this.state);
         return(    
             <section>
-                <Link to={'populares'}>
-                    <h3>PELICULAS POPULARES </h3> 
-                </Link>         
+                <Link to={'populares'}><h3>PELICULAS POPULARES </h3> </Link>     
+
                 <div className="body-home">               
-                { 
+                    { 
                    this.state.populares.slice(0,5).map(function(unaPeli){
-                    return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
-                   })
-                } 
+                    return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>})
+                    } 
+
                 </div>
-                <Link to='/cartelera'>
-                    <h3>PELICULAS EN CARTELERA</h3>
-                </Link>
+                <Link to='/cartelera'><h3>PELICULAS EN CARTELERA</h3></Link>
+                
                 <div className="body-home">
-                { 
-                   this.state.cartelera.slice(0,5).map(function(unaPeli){
-                    return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
-                   })
-                } 
+                    { 
+                    this.state.cartelera.slice(0,5).map(function(unaPeli){
+                        return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>})
+                    } 
                 </div>
             </section>   
         )

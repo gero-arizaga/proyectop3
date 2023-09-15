@@ -7,3 +7,15 @@
     padding: 10px;
     margin: 0px;
 }
+.botonMas{
+    background:  rgba(118, 26, 0, 0.288);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 150px;
+}
+.botonMas:hover{
+    background-color:rgb(173, 121, 0);
+}
