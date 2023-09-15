@@ -41,8 +41,10 @@ class Populares extends Component{
             <React.Fragment >   
                 {this.state.populares.length > 0 ?  
                 <section>
-                <h3>POPULARES</h3> 
-                <Filtro textoIngresado={this.state.textoIngresado} filtrarPeliculas={(e) => this.filtrarPeliculas(e) }/>
+                <div className='tituloYfiltro'>
+                    <h3>POPULARES</h3> 
+                    <Filtro textoIngresado={this.state.textoIngresado} filtrarPeliculas={(e) => this.filtrarPeliculas(e) }/>
+                </div>
                 <div className="pelisPop">
                     {this.state.populares.map((unaPeli) => {
                         if (unaPeli.title.toLowerCase().includes(this.state.textoIngresado.toLowerCase())){

@@ -42,8 +42,10 @@ class Cartelera extends Component{
              <React.Fragment>
                 {this.state.cartelera.length > 0 ?
                 <section>
-                <h3>CARTELERA</h3> 
-                <Filtro textoIngresado={this.state.textoIngresado} filtrarPeliculas={(e) => this.filtrarPeliculas(e) }/>
+                <div className='tituloYfiltro'>
+                    <h3>CARTELERA</h3> 
+                    <Filtro textoIngresado={this.state.textoIngresado} filtrarPeliculas={(e) => this.filtrarPeliculas(e) }/>
+                </div>
                 <div className="pelisCartelera">
                     {this.state.cartelera.map((unaPeli) => {
                         if (unaPeli.title.toLowerCase().includes(this.state.textoIngresado.toLowerCase())){

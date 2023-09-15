@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DetallePelicula from "../../screens/DetallePelicula/DetallePelicula"
 import './Detail.css'
 
 class DetailPelicula extends Component {
@@ -48,13 +47,13 @@ class DetailPelicula extends Component {
                 <img className="imagenpeli" src={"https://image.tmdb.org/t/p/w300/" + this.state.peliTraida.peliculaTraida.poster_path} alt={this.state.peliTraida.title}/>  
                 <div className='items3'>
                 <section className="items1">
-                    <p className="texto">Fecha de estreno:{this.state.peliTraida.peliculaTraida.release_date}</p>
-                    <p className="texto">Rating: {this.state.peliTraida.peliculaTraida.vote_average}</p>
+                    <p>Fecha de estreno:{this.state.peliTraida.peliculaTraida.release_date}</p>
+                    <p>Rating: {this.state.peliTraida.peliculaTraida.vote_average}</p>
                 </section>
-                <p className="texto">Sinopsis: {this.state.peliTraida.peliculaTraida.overview}</p>
+                <p>Sinopsis: {this.state.peliTraida.peliculaTraida.overview}</p>
                 <div className="items1">
-                    <p className="texto">Duracion:{this.state.peliTraida.peliculaTraida.runtime}mins</p>
-                    <p className="texto">Generos:{this.state.peliTraida.peliculaTraida.genres.map(function(generos){
+                    <p>Duracion:{this.state.peliTraida.peliculaTraida.runtime} mins</p>
+                    <p>Generos:{this.state.peliTraida.peliculaTraida.genres.map(function(generos){
                         return(
                             <li className='generos'>{generos.name}</li>
                         )}) }

@@ -24,7 +24,7 @@ class Resultados extends Component {
             <React.Fragment>
                 {this.state.peliculas.length > 0 ?
                 <section>
-                <h2>Resultados de busqueda</h2>
+                <h2>Resultados de busqueda "{this.props.match.params.query}"</h2>
                 <div className="pelisPop">
                 {this.state.peliculas.slice(0,24).map((pelicula)=> {
                     return(<TarjetaPelicula key={ pelicula.id } datosPeli={ pelicula }/>)
