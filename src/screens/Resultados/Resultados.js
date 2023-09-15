@@ -21,20 +21,19 @@ class Resultados extends Component {
 
     render() {
         return (
-            <section>
+            <React.Fragment>
+                {this.state.peliculas.length > 0 ?
+                <section>
                 <h2>Resultados de busqueda</h2>
                 <div className="pelisPop">
-                    {this.state.peliculas.length > 0 ? (
-                        this.state.peliculas.slice(0,24).map((pelicula)=> {
-                            return(
-                                <TarjetaPelicula key={ pelicula.id } datosPeli={ pelicula }/>
-                            )
-                        })
-                    ):(
-                        <p>Cargando</p>
-                    )}
+                {this.state.peliculas.slice(0,24).map((pelicula)=> {
+                    return(<TarjetaPelicula key={ pelicula.id } datosPeli={ pelicula }/>)
+                    })
+                }   
                 </div>
-            </section>
+                </section>:
+                <h2>Cargando <img src="/img/loading.gif" height='20px' alt=''/></h2>}
+            </React.Fragment>
         )
     }
 }

@@ -33,7 +33,9 @@ class Home extends Component{
     render(){
         console.log(this.state);
         return(    
-            <section>
+            <React.Fragment>
+                {this.state.populares.length > 0 ?
+                <section>
                 <Link to={'populares'}><h3>PELICULAS POPULARES </h3> </Link>     
 
                 <div className="body-home">               
@@ -51,7 +53,9 @@ class Home extends Component{
                         return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>})
                     } 
                 </div>
-            </section>   
+            </section> :
+            <h2>Cargando <img src="/img/loading.gif" height='20px' alt=''/></h2>}
+        </React.Fragment>  
         )
     }
 }

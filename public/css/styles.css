@@ -58,7 +58,7 @@ nav ul {
     font-weight: bold;
 }
 
-.user img {
+.logo img {
     width: 100px;
     height: 60px;
     margin-left: 10px;
@@ -143,4 +143,22 @@ footer {
     
     bottom: 0;
     width: 100%;
+}
+
+@media(max-width: 420px){
+    a{
+        font-size: 10px;
+    }
+    .img_portada{
+        height: 190px;
+        width: 120px;
+    }
+    h1,h2,h3{
+        font-size: 15px;
+    }
+    .logo img {
+        width: 50px;
+        height: 30px;
+        margin-right: 20px;
+    }
 }

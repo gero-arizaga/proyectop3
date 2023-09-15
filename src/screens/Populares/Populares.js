@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TarjetaPelicula from "../../components/TarjetaPelicula/TarjetaPelicula";
+import Filtro from '../../components/Filtro/Filtro';
 import './Populares.css'
 
 class Populares extends Component{
@@ -8,6 +9,7 @@ class Populares extends Component{
         this.state = {
             populares:[],
             pagina:1,
+            textoIngresado: '',
         }
     };
 
@@ -20,6 +22,10 @@ class Populares extends Component{
         }))
         .catch(e => console.log(e))
     }
+    filtrarPeliculas(e){
+        this.setState({textoIngresado: e.target.value})
+    }
+
     traerMas(){
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=0317bbf7efac7dd04b2c2c3748377d57&language=en-US&page=1"+ this.state.pagina)
         .then( res => res.json())
@@ -32,22 +38,22 @@ class Populares extends Component{
 
     render(){
         return(
-            <section >
-            <h3>POPULARES</h3> 
-            <div className="pelisPop">
-                { 
-                    this.state.populares ?
-                    (this.state.populares.map(function(unaPeli){
-                    return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
-                    }))
-                    
-                    : (<h2>Cargando...</h2>)
-                }
-                <button className='botonMas' onClick={() => this.traerMas(this.state.populares)}>Traer Más</button>
-            </div>
-            
-
-            </section> 
+            <React.Fragment >   
+                {this.state.populares.length > 0 ?  
+                <section>
+                <h3>POPULARES</h3> 
+                <Filtro textoIngresado={this.state.textoIngresado} filtrarPeliculas={(e) => this.filtrarPeliculas(e) }/>
+                <div className="pelisPop">
+                    {this.state.populares.map((unaPeli) => {
+                        if (unaPeli.title.toLowerCase().includes(this.state.textoIngresado.toLowerCase())){
+                            return <TarjetaPelicula key={ unaPeli.id } datosPeli={ unaPeli }/>
+                        }
+                    })}
+                    <button className='botonMas' onClick={() => this.traerMas(this.state.populares)}>Traer Más</button>
+                </div>
+                </section>:
+                <h2>Cargando <img src="/img/loading.gif" height='20px' alt=''/></h2>}
+            </React.Fragment> 
         )
     }
 }

@@ -47,3 +47,26 @@
 .generos{
     color: beige;
 }
+
+@media(max-width: 420px){
+    p,a{
+        font-size: 10px;
+    }
+    .imagenpeli{
+        height: 220px;
+        width: 120px;
+    }
+    h1,h2,h3{
+        font-size: 15px;
+    }
+    .botonfav{
+        padding: 5px 5px;
+        margin-right: 10px;
+        font-size: 10px;
+    }
+    .items3{
+        padding:20px;
+        margin: 0px;
+        border-radius: 60px;
+    }
+}

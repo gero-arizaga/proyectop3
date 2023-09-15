@@ -33,7 +33,9 @@ class Favoritos extends Component{
         }
     render(){
         return(
-            <section>
+            <React.Fragment>
+                {this.state.favoritos.length > 0 ?
+                <section>
                 <h2>Favoritos</h2>
                 <div className="pelisPop">
                     {this.state.favoritos.map(
@@ -41,7 +43,9 @@ class Favoritos extends Component{
 
                     )}
                 </div>
-            </section>
+                </section>:
+                <h2>Cargando <img src="/img/loading.gif" height='20px' alt=''/></h2>}
+            </React.Fragment>
         )
     }
 }

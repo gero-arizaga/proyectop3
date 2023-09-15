@@ -12,7 +12,7 @@ function Navbar(){
                 <li><Link className='enlaces' to='/cartelera'>CARTELERA</Link></li>
             </ul>
             <ul><Buscador/></ul>
-            <ul className="user">
+            <ul className="logo">
                 <li> <Link to='/'><img src="/img/MAGOBA.png" alt=""/></Link></li>
             </ul>
         </nav>

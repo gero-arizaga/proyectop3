@@ -25,10 +25,9 @@ class DetallePelicula extends Component {
     render() {
         return(
             <div>
-                {this.state.pelicula ? (<DetailPelicula peliculaTraida={this.state.pelicula}/>): (
-                    <p>Cargando</p>
-                    )
-                }
+                {this.state.pelicula !== '' ?
+                (<DetailPelicula peliculaTraida={this.state.pelicula}/>): 
+                <h2>Cargando <img src="/img/loading.gif" height='20px' alt=''/></h2>}
             </div>
       )  }
     }
